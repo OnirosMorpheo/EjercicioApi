@@ -60,6 +60,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ejercicio.Business\Ejercicio.Business.csproj">
+      <Project>{c0af9f17-bde4-4aa5-8fee-abf044f0aaad}</Project>
+      <Name>Ejercicio.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ejercicio.Entities\Ejercicio.Entities.csproj">
       <Project>{af387382-724c-4dfb-9b0b-247c2e15dafb}</Project>
       <Name>Ejercicio.Entities</Name>

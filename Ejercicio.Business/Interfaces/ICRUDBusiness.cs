@@ -1,5 +1,5 @@
 ﻿
-namespace Ejercicio.Business.Interfaces
+namespace Ejercicio.Business
 {
     using Ejercicio.Models.Api;
     using System;

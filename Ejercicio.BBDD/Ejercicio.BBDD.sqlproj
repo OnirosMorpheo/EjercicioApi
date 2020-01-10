@@ -61,5 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Trazas.sql" />
+    <Build Include="dbo\Tables\User.sql" />
   </ItemGroup>
 </Project>

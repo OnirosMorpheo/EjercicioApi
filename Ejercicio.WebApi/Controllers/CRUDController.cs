@@ -2,18 +2,12 @@
 
 namespace Ejercicio.WebApi.Controllers
 {
-    using Ejercicio.Business;
-    using Ejercicio.Models;
-    using Microsoft.Web.Http;
-    using System;
+    using Ejercicio.Business.Interfaces;
+    using Ejercicio.Models.Api;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Net;
-    using System.Security.Principal;
     using System.Threading.Tasks;
-    using System.Web;
     using System.Web.Http;
-    using System.Web.Http.Description;
 
     /// <summary>
     /// CRUDController
