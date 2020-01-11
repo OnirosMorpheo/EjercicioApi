@@ -6,7 +6,7 @@
 // 
 //     Connection String Name: `conexionEjercicio`
 //     Provider:               `System.Data.SqlClient`
-//     Connection String:      `Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\data\bbddLocal.mdf;Integrated Security=True;Connect Timeout=300;`
+//     Connection String:      `Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Oniros\Source\Repos\OnirosMorpheo\EjercicioApi\Ejercicio.BBDD\BBDDLocal\bbddLocal.mdf;Integrated Security=True;Connect Timeout=30;`
 //     Include Views:          `True`
 
 
@@ -14,11 +14,8 @@
 namespace Ejercicio.Entities
 {
 
-	using Ejercicio.Persistencia;
-    using Ejercicio.Persistencia.Interfaces;
-    using Ejercicio.Persistencia.Metadata;
-    using Ejercicio.Persistencia.Propiedades;
-    using Ejercicio.Trazas;
+	using Ejercicio.Persistence.Metadata;
+    using Ejercicio.Persistence.Propiedades;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -93,7 +90,7 @@ namespace Ejercicio.Entities
         [NotMapped]
 		public string Select => "_user.[Id]";
 		[NotMapped]
-		public List<string> ListaParametros => new List<string>() { "Id" };
+		public List<string> ListaParametros => new List<string>();
 		public override string ToString()
 		{
 			return "Id";

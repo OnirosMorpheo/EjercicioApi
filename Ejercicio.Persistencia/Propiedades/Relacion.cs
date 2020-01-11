@@ -1,5 +1,5 @@
 ﻿
-namespace Ejercicio.Persistencia.Propiedades
+namespace Ejercicio.Persistence.Propiedades
 {
     using System.Collections.Generic;
     using System.Linq;

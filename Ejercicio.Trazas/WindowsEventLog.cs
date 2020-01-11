@@ -6,7 +6,7 @@ namespace Ejercicio.Trazas
     public class WindowsEventLog : ITrazaLog, IExceptionLog
     {
         private static string source = "WebApi";
-        private static string log = "Bote";
+        private static string log = "Ejercicio";
         public bool SalvarLog(Traza traza)
         {
             try

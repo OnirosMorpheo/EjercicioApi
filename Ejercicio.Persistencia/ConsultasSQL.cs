@@ -1,5 +1,5 @@
 ﻿
-namespace Ejercicio.Persistencia
+namespace Ejercicio.Persistence
 {
     public class ConsultasSQL
     {
@@ -15,6 +15,7 @@ namespace Ejercicio.Persistencia
         public const string SQL_GET_BY_KEY = "SELECT * FROM {0} WHERE {1}";
 
         public const string SQL_GET_BY_Uid = "SELECT * FROM {0} WHERE [{1}] = @Uid";
+        public const string SQL_EXISTS_BY_Uid = "SELECT COUNT(*) FROM {0} WHERE [{1}] = @Uid";
 
         public const string SQL_GET_BY_IDS = "SELECT * FROM {0} WHERE [{1}] in @IDs";
         public const string SQL_GET_BY_PKS = "SELECT * FROM {0} WHERE ({1})";
@@ -30,7 +31,7 @@ namespace Ejercicio.Persistencia
         public const string SQL_SOFT_DELETE_BY_Uid_AUDITORIA = "UPDATE {0} SET DeleteDate = getutcdate(), UpdateBy = '{1}', UpdatedDate = getutcdate() WHERE {2} = @Uid AND (DeleteDate IS NULL OR DeleteDate > getutcdate())";
         public const string SQL_SOFT_DELETE_BY_PK_AUDITORIA = "UPDATE {0} SET DeleteDate = getutcdate(), UpdateBy = '{1}', UpdatedDate = getutcdate() WHERE {2} AND (DeleteDate IS NULL OR DeleteDate > getutcdate())";
 
-        public const string SQL_UNDO_SOFT_DELETE_BY_Uid = "UPDATE {0} SET FechaBorrado = NULL WHERE [{1}] = @Uid";
+        public const string SQL_UNDO_SOFT_DELETE_BY_Uid = "UPDATE {0} SET DeleteDate = NULL WHERE [{1}] = @Uid";
 
         public const string SQL_UNDO_SOFT_DELETE_BY_Uid_AUDITORIA = "UPDATE {0} SET DeleteDate = NULL, UpdateBy = '{1}', UpdatedDate = getutcdate() WHERE [{2}] = @Uid";
 

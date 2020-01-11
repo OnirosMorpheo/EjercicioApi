@@ -1,4 +1,5 @@
 ﻿using Ejercicio.Utilities;
+using Ejercicio.WebApi.Areas.HelpPage;
 using Microsoft.Web.Http;
 using Microsoft.Web.Http.Routing;
 using Microsoft.Web.Http.Versioning;
@@ -17,9 +18,6 @@ namespace Ejercicio.WebApi
     {
         public static void Register(HttpConfiguration config)
         {
-            // Configuración y servicios de API web
-            //config.EnableCors(); // new EnableCorsAttribute("*", "*", "*"));
-            //Configurando autofac:
             AutofacWebapiConfig.Initialize(config);
             AreaRegistration.RegisterAllAreas();
 
@@ -89,7 +87,9 @@ namespace Ejercicio.WebApi
                      elemento.EnableDiscoveryUrlSelector();
                      elemento.EnableApiKeySupport("Authorization", "header");
                  });
-            config.MessageHandlers.Add(new TokenValidationHandler());
+            config.SetDocumentationProvider(new XmlDocumentationProvider(GetXmlCommentsPath()));
+            if(Utils.Setting<bool>("JWT_ACTIVADO"))
+                config.MessageHandlers.Add(new TokenValidationHandler());
         }
 
         private static string GetXmlCommentsPath()

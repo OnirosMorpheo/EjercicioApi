@@ -1,13 +1,13 @@
 ﻿
 
-namespace Ejercicio.Persistencia
+namespace Ejercicio.Persistence
 {
     using Autofac;
     using Autofac.Core;
     using Autofac.Core.Activators.Delegate;
     using Autofac.Core.Lifetime;
     using Autofac.Core.Registration;
-    using Ejercicio.Persistencia.Interfaces;
+    using Ejercicio.Persistence.Interfaces;
     using System;
     using System.Collections.Generic;
     using System.Linq;

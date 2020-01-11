@@ -1,9 +1,9 @@
 ﻿
 
-namespace Ejercicio.Persistencia
+namespace Ejercicio.Persistence
 {
-    using Ejercicio.Persistencia.Interfaces;
-    using Ejercicio.Persistencia.Metadata;
+    using Ejercicio.Persistence.Interfaces;
+    using Ejercicio.Persistence.Metadata;
     using Ejercicio.Trazas;
     using Ejercicio.Utilities;
     using Dapper;
@@ -12,6 +12,8 @@ namespace Ejercicio.Persistencia
     using System.Data;
     using System.Diagnostics;
     using System.Linq;
+    using System.Threading.Tasks;
+
     public class Repositorio : IRepositorio, IDisposable
     {
         private IDatabaseConnectionFactory DatabaseConnectionFactory { get; set; }
@@ -56,6 +58,35 @@ namespace Ejercicio.Persistencia
             Debug.WriteLine("GetConnection transaction " + (transaction != null).ToString() + ". Connection:" + connection.State);
             */
             return connection;
+        }
+        public async Task<IEnumerable<E>> QueryAsync<E>(string query, IDbTransaction transaction = null)
+        {
+            IEnumerable<E> result = null;
+            var connection = this.GetConnection(transaction);
+            try
+            {
+                result = await connection.QueryAsync<E>(query, transaction: transaction);
+            }
+            catch (Exception ex)
+            {
+                trazaLoggerInterceptor.GuardarExcepcion(
+                    Guid.NewGuid(),
+                    UsuarioContexto.Nombre,
+                    "Db",
+                    "Ejercicio.Infraestructura.DB",
+                    "Ejercicio.Infraestructura.DB",
+                    "Query<E>",
+                    ex,
+                    new List<string>() { query }
+                    );
+                throw ex;
+            }
+            finally
+            {
+                DisposeConnection(connection, transaction);
+            }
+            DisposeConnection(connection, transaction);
+            return result;
         }
 
         public IEnumerable<E> Query<E>(string query, IDbTransaction transaction = null)

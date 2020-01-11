@@ -9,9 +9,15 @@ namespace Ejercicio.WebApi
     using System.Web.Http;
     using Ejercicio.Utilities;
 
+    /// <summary>
+    /// Configuración del contenedor de IoC
+    /// </summary>
     public static class AutofacWebapiConfig
     {
 
+        /// <summary>
+        /// Contenedor de IoC
+        /// </summary>
         public static IContainer Container;
 
         /// <summary>

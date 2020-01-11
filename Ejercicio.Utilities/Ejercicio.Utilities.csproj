@@ -37,8 +37,11 @@
     <Reference Include="Autofac.Extras.DynamicProxy, Version=4.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.Extras.DynamicProxy.4.5.0\lib\net45\Autofac.Extras.DynamicProxy.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
+      <HintPath>..\packages\Castle.Core.4.4.0\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -105,11 +108,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiExtension\CustomAutorizeAttribute.cs" />
     <Compile Include="ApiExtension\FileStreamContent.cs" />
     <Compile Include="ApiExtension\HttpResult.cs" />
     <Compile Include="ApiExtension\HttpStatusCodeResult.cs" />
     <Compile Include="ApiExtension\MultipartFormDataContentDispositionStreamProvider.cs" />
     <Compile Include="CustomClaimsTypes.cs" />
+    <Compile Include="Extensiones\AutoMapperExtension.cs" />
     <Compile Include="Extensiones\ConsTexto.cs" />
     <Compile Include="Extensiones\EnumerableExtensions.cs" />
     <Compile Include="Extensiones\EnumExtension.cs" />

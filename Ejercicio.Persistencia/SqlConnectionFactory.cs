@@ -1,8 +1,8 @@
 ﻿
 
-namespace Ejercicio.Persistencia
+namespace Ejercicio.Persistence
 {
-    using Ejercicio.Persistencia.Interfaces;
+    using Ejercicio.Persistence.Interfaces;
     using Ejercicio.Utilities;
     using System.Configuration;
     using System.Data;

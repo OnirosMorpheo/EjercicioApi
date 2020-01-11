@@ -22,7 +22,6 @@ namespace Ejercicio.Utilities.Extensions
             return result;
         }
 
-        //public static async Task<HttpResponseMessage> PostAsJsonFormDataAsync<T>(this HttpClient, string url, T value)
 
     }
 }

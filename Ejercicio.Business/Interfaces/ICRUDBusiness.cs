@@ -7,7 +7,7 @@ namespace Ejercicio.Business
     using System.Threading.Tasks;
     public interface ICRUDBusiness<TModel, TKey> : IDisposable where TModel : class, new()
     {
-        Task<IEnumerable<TModel>> GetAllAsync(FiltroModel filtro = null);
+        Task<IEnumerable<TModel>> GetAllAsync();
         Task<TModel> GetAsync(TKey id);
         Task<bool> ExistAsync(TModel model);
         Task<bool> ExistAsync(TKey id);

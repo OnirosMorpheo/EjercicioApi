@@ -19,8 +19,6 @@ namespace Ejercicio.Utilities
             {
                 if (_config == null)
                 {
-                    //if (HttpContext.Current != null && !HttpContext.Current.Request.PhysicalPath.Equals(string.Empty))
-                    //    _config = System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration("~");
                     if (HttpRuntime.AppDomainAppId != null)
                         _config = System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(HttpRuntime.AppDomainAppVirtualPath);
                     else

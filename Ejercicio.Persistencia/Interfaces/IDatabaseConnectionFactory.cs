@@ -1,5 +1,5 @@
 ﻿
-namespace Ejercicio.Persistencia.Interfaces
+namespace Ejercicio.Persistence.Interfaces
 {
     using System.Data;
 

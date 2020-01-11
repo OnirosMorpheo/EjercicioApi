@@ -41,14 +41,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IUserServices.cs" />
+    <Compile Include="Interfaces\IService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ejercicio.Entities\Ejercicio.Entities.csproj">
       <Project>{AF387382-724C-4DFB-9B0B-247C2E15DAFB}</Project>
       <Name>Ejercicio.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ejercicio.Persistencia\Ejercicio.Persistence.csproj">
+      <Project>{EBBDF463-CF44-4B2A-876C-001E7B160AE2}</Project>
+      <Name>Ejercicio.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ejercicio.Utilities\Ejercicio.Utilities.csproj">
+      <Project>{40148b4f-8076-44c1-a703-b0e6872f5930}</Project>
+      <Name>Ejercicio.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,11 +1,17 @@
-﻿using System.Web;
-using System.Web.Optimization;
-
+﻿
 namespace Ejercicio.WebApi
 {
+    using System.Web.Optimization;
+
+    /// <summary>
+    /// Ínclusión de scripts para el MVC
+    /// </summary>
     public class BundleConfig
     {
-        // Para obtener más información sobre las uniones, visite https://go.microsoft.com/fwlink/?LinkId=301862
+        /// <summary>
+        /// Método de registro de Bundles
+        /// </summary>
+        /// <param name="bundles"></param>
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(

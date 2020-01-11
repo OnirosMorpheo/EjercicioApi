@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio.Entities", "Ejerc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio.Business", "Ejercicio.Business\Ejercicio.Business.csproj", "{C0AF9F17-BDE4-4AA5-8FEE-ABF044F0AAAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio.Persistencia", "Ejercicio.Persistencia\Ejercicio.Persistencia.csproj", "{EBBDF463-CF44-4B2A-876C-001E7B160AE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio.Persistence", "Ejercicio.Persistencia\Ejercicio.Persistence.csproj", "{EBBDF463-CF44-4B2A-876C-001E7B160AE2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio.Models", "Ejercicio.Models\Ejercicio.Models.csproj", "{1E076FA8-6298-43A9-BD67-31420BFEA16B}"
 EndProject

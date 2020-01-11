@@ -76,11 +76,8 @@ It is based on the T4 template from the PetaPoco project which in turn is based 
 namespace <#=Namespace #>
 {
 
-	using Ejercicio.Persistencia;
-    using Ejercicio.Persistencia.Interfaces;
-    using Ejercicio.Persistencia.Metadata;
-    using Ejercicio.Persistencia.Propiedades;
-    using Ejercicio.Trazas;
+	using Ejercicio.Persistence.Metadata;
+    using Ejercicio.Persistence.Propiedades;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;

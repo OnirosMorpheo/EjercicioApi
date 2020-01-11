@@ -71,6 +71,10 @@
       <Project>{7aa9f2cd-316d-4196-8ed7-374899f11aba}</Project>
       <Name>Ejercicio.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ejercicio.Utilities\Ejercicio.Utilities.csproj">
+      <Project>{40148b4f-8076-44c1-a703-b0e6872f5930}</Project>
+      <Name>Ejercicio.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,10 +1,10 @@
 ﻿
 
-namespace Ejercicio.Persistencia
+namespace Ejercicio.Persistence
 {
     using Autofac;
     using Autofac.Extras.DynamicProxy;
-    using Ejercicio.Persistencia.Interfaces;
+    using Ejercicio.Persistence.Interfaces;
     using Ejercicio.Trazas;
 
     public class PersistenciaModule : Module
@@ -15,9 +15,7 @@ namespace Ejercicio.Persistencia
             builder.RegisterType<RepositorioGenericoFactory>().As<IRepositorioGenericoFactory>().SingleInstance();
             builder.RegisterSource(new RepositorioGenericoRegistrationSource());
             builder.RegisterType<Repositorio>().As<IRepositorio>()/*.InstancePerRequest()//.InstancePerRequest()*/
-                    .EnableInterfaceInterceptors().InterceptedBy(TrazaLoggerInterceptor.TRAZA_3);           
-         
-            
+                    .EnableInterfaceInterceptors().InterceptedBy(TrazaLoggerInterceptor.TRAZA_3);                    
         }
     }
 }

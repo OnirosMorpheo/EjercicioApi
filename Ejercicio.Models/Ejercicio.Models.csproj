@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Api\FiltroModel.cs" />
     <Compile Include="Api\Interfaces\IModel.cs" />
+    <Compile Include="Api\LoginModel.cs" />
     <Compile Include="Api\UserModel.cs" />
     <Compile Include="Extensiones\NullToDefaultConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

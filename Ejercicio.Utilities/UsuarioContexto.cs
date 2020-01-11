@@ -2,7 +2,6 @@
 
 namespace Ejercicio.Utilities
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.Security.Claims;

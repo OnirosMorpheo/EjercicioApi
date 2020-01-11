@@ -12,49 +12,51 @@ namespace Ejercicio.Business
 
     public class UserBusiness : IUserBusiness, IDisposable
     {
-        private readonly IUserServices service;
+        private readonly IUserService userService;
         private readonly IUserAdapter adapter;
         
-        public UserBusiness(IUserServices service, IUserAdapter adapter)
+        public UserBusiness(IUserService userService, IUserAdapter adapter)
         {
-            this.service = service;
+            this.userService = userService;
             this.adapter = adapter;
         }
 
-        public async Task<IEnumerable<UserModel>> GetAllAsync(FiltroModel filtro = null)
+        public async Task<IEnumerable<UserModel>> GetAllAsync()
         {
-            return adapter.ToIEnumerableModel(await Task.Run(() => service.GetAll()));
+            return adapter.ToIEnumerableModel(await userService.GetAllAsync());
         }
 
-        public async Task<UserModel> GetAsync(int id)
+        public async Task<UserModel> GetAsync(Guid id)
         {
-            return adapter.ToModel(await Task.Run(() => service.Get(id)));
+            return adapter.ToModel(await userService.GetAsync(id));
         }
 
-        public Task<bool> ExistAsync(UserModel model)
+        public async Task<bool> ExistAsync(UserModel model)
         {
-            return Task.Run(() => service.Get(adapter.ToDto(model)) != null);
+            return await userService.ExistsAsync(model.Id);
         }
 
-        public Task<bool> ExistAsync(int id)
+        public async Task<bool> ExistAsync(Guid id)
         {
-            return Task.Run(() => service.Get(id) != null);
+            return await userService.ExistsAsync(id);
         }
 
         public async Task<UserModel> SaveAsync(UserModel model)
         {
             UserDto entidad = adapter.ToDto(model);
-            if (await Task.Run(() => this.service.Save(entidad)))
+            if (await this.userService.Save(entidad))
                 model.Uid = entidad.Uid;
             else
                 return null;
             return model;
         }
 
-        public Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(Guid id)
         {
-            return Task.Run(() => this.service.Delete(id));
+            return await userService.DeleteAsync(id);
         }
+
+
 
         #region Patron Disposable
 
@@ -87,6 +89,6 @@ namespace Ejercicio.Business
         }
 
         #endregion
-    
+
     }
 }

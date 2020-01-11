@@ -1,6 +1,6 @@
 ﻿
 
-namespace Ejercicio.Persistencia
+namespace Ejercicio.Persistence
 {
     using System;
     public class EntidadClaveExterna

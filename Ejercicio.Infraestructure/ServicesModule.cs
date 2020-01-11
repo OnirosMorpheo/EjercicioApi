@@ -4,7 +4,7 @@ namespace Ejercicio.Infraestructure
     using Autofac;
     using Autofac.Extras.DynamicProxy;
     using Ejercicio.Entities;
-    using Ejercicio.Persistencia;
+    using Ejercicio.Persistence;
     using Ejercicio.Trazas;
     using Ejercicio.Services;
 
@@ -22,7 +22,7 @@ namespace Ejercicio.Infraestructure
                    .AsSelf().InstancePerDependency()//.InstancePerRequest()
                    .EnableClassInterceptors().InterceptedBy(TrazaLoggerInterceptor.TRAZA_2); ;
 
-            builder.RegisterAssemblyTypes(typeof(IUserServices).Assembly)
+            builder.RegisterAssemblyTypes(typeof(IUserService).Assembly)
                    .Where(t => t.Name.EndsWith("Service"))
                    .AsImplementedInterfaces().InstancePerDependency()//.InstancePerRequest()
                    .EnableInterfaceInterceptors().InterceptedBy(TrazaLoggerInterceptor.TRAZA_2);

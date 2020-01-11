@@ -1,5 +1,5 @@
 ﻿
-namespace Ejercicio.Persistencia.Metadata
+namespace Ejercicio.Persistence.Metadata
 {
     public interface IParamsTableValued
     {

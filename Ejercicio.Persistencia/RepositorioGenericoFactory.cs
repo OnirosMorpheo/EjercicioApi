@@ -1,9 +1,9 @@
 ﻿
 
-namespace Ejercicio.Persistencia
+namespace Ejercicio.Persistence
 {
-    using Ejercicio.Persistencia.Interfaces;
-    using Ejercicio.Persistencia.Metadata;
+    using Ejercicio.Persistence.Interfaces;
+    using Ejercicio.Persistence.Metadata;
     using Ejercicio.Trazas;
     using System;
     using System.Collections.Generic;

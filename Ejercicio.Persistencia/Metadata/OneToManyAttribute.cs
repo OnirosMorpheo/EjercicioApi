@@ -1,6 +1,6 @@
 ﻿
 
-namespace Ejercicio.Persistencia.Metadata
+namespace Ejercicio.Persistence.Metadata
 {
     using System;
     public class OneToManyAttribute : Attribute

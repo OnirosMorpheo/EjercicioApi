@@ -1,7 +1,7 @@
 ﻿
 namespace Ejercicio.Entities
 {
-    using Ejercicio.Persistencia.Interfaces;
+    using Ejercicio.Persistence.Interfaces;
     using Ejercicio.Trazas;
 
     public class RepoLog : IRepoLog

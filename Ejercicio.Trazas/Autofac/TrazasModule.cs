@@ -21,8 +21,7 @@ namespace Ejercicio.Trazas
             builder.Register(c => new TrazaLoggerInterceptor(TrazaLoggerInterceptor.TRAZA_NIVEL_4, c.Resolve<IEnumerable<ITrazaLog>>(), c.Resolve<IEnumerable<IExceptionLog>>())).Named<IInterceptor>(TrazaLoggerInterceptor.TRAZA_4);//.SingleInstance();
             builder.Register(c => new TrazaLoggerInterceptor(TrazaLoggerInterceptor.TRAZA_NIVEL_5, c.Resolve<IEnumerable<ITrazaLog>>(), c.Resolve<IEnumerable<IExceptionLog>>())).Named<IInterceptor>(TrazaLoggerInterceptor.TRAZA_5);//.SingleInstance();
             builder.Register(c => new TrazaLoggerInterceptor(TrazaLoggerInterceptor.TRAZA_NIVEL_0, c.Resolve<IEnumerable<ITrazaLog>>(), c.Resolve<IEnumerable<IExceptionLog>>()));//.SingleInstance();
-            //builder.Register(c => new TrazaLoggerInterceptor(TrazaLoggerInterceptor.TRAZA_NIVEL_0, new List<ITrazaLog>(), new List<IExceptionLog>()));//.SingleInstance();
-
+            
 
 
             /* Traza */

@@ -43,7 +43,8 @@ namespace Ejercicio.WebApi
         {
             HttpStatusCode statusCode;
             SecurityToken securityToken;
-            string token;
+            string token = string.Empty;
+                       
 
             // determine whether a jwt exists or not
             if (!TryRetrieveToken(request, out token))
@@ -70,8 +71,6 @@ namespace Ejercicio.WebApi
                     IssuerSigningKey = securityKey
                 };
 
-                // Extract and assign Current Principal and user
-                /*IMPERSONAR NOMBRE USUARIO SOLO DISPONIBLE PARA APLICACIONES AUTORIZADAS*/
                 // Asigna el ClaimsPrincipal.
                 var claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out securityToken);
 

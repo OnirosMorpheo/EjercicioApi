@@ -2,8 +2,9 @@
 
 namespace Ejercicio.WebApi.Controllers
 {
-    using Ejercicio.Business.Interfaces;
+    using Ejercicio.Business;
     using Ejercicio.Models.Api;
+    using Ejercicio.Utilities.ApiExtension;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace Ejercicio.WebApi.Controllers
     /// </summary>
     /// <typeparam name="TModel"></typeparam>
     /// <typeparam name="TKey"></typeparam>    
-    [Authorize]
+    [CustomAutorizeAttribute]           //Autorize
     [ValidateModel]
     public abstract class CRUDController<TModel, TKey> : BaseController where TModel : class, IModel<TKey>, new()
     {
@@ -58,7 +59,7 @@ namespace Ejercicio.WebApi.Controllers
         }
 
         /// <summary>
-        /// Get 
+        /// Get Element By Id
         /// </summary>
         /// <param name="id">guid id</param>
         /// <returns></returns>
