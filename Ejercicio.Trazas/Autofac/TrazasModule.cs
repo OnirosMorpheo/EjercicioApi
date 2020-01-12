@@ -33,7 +33,10 @@ namespace Ejercicio.Trazas
             var typeTraza = typeof(ITrazaLog);
 
             var ensamblados = /*BuildManager.GetReferencedAssemblies()*/AppDomain.CurrentDomain.GetAssemblies().Cast<Assembly>()
-                .ToArray().Where(e => e.FullName.StartsWith("Ejercicio"));
+                .ToArray().Where(e => e.FullName.StartsWith("Ejercicio.Persistence") ||
+                                      e.FullName.StartsWith("Ejercicio.Entities") ||
+                                      e.FullName.StartsWith("Ejercicio.Trazas"));
+            
             var tipos = ensamblados.SelectMany(s => s.GetTypes());
 
             var tiposException = tipos.Where(p => sistemasRegistroExcepciones.Contains(p.Name.ToLower()) && typeException.IsAssignableFrom(p) && typeException != p);

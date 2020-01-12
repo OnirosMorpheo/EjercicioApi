@@ -26,7 +26,7 @@ namespace Ejercicio.Infraestructure
 
             builder.RegisterAssemblyTypes(typeof(IUserBusiness).Assembly)
                    .Where(t => t.Name.EndsWith("Business"))
-                   .AsImplementedInterfaces().InstancePerRequest()
+                   .AsImplementedInterfaces().InstancePerDependency()
                    .EnableInterfaceInterceptors().InterceptedBy(TrazaLoggerInterceptor.TRAZA_3);
         }
     }

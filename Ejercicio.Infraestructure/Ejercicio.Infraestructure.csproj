@@ -68,6 +68,10 @@
       <Project>{af387382-724c-4dfb-9b0b-247c2e15dafb}</Project>
       <Name>Ejercicio.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ejercicio.Models\Ejercicio.Models.csproj">
+      <Project>{1e076fa8-6298-43a9-bd67-31420bfea16b}</Project>
+      <Name>Ejercicio.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ejercicio.Persistencia\Ejercicio.Persistence.csproj">
       <Project>{ebbdf463-cf44-4b2a-876c-001e7b160ae2}</Project>
       <Name>Ejercicio.Persistence</Name>
